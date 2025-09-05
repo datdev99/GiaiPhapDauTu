@@ -1,6 +1,6 @@
 import React from 'react';
 import { Eye, Target, Heart, Users, TrendingUp, Shield, Award, Globe } from 'lucide-react';
-import Header from '../../components/client/header/Header';
+import Header from '../../components/layout/header/Header';
 
 const AboutCompany = () => {
   const coreValues = [
@@ -29,15 +29,14 @@ const AboutCompany = () => {
   const stats = [
     { number: "10+", label: "Năm Kinh Nghiệm", icon: <Globe className="w-6 h-6" /> },
     { number: "50K+", label: "Khách Hàng Tin Tưởng", icon: <Users className="w-6 h-6" /> },
-    { number: "24/7", label: "Hỗ Trợ Khách Hàng", icon: <Shield className="w-6 h-6" /> },
+    { number: "24/5", label: "Hỗ Trợ Khách Hàng", icon: <Shield className="w-6 h-6" /> },
     { number: "98%", label: "Tỷ Lệ Hài Lòng", icon: <Award className="w-6 h-6" /> }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      <Header />
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white">
+      <div className="relative bg-gradient-to-t from-[#141737] via-[#1f1f4a] to-[#2a2a5a] text-white py-12 sm:py-16 lg:py-20">
         <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="relative max-w-7xl mx-auto px-4 py-16 sm:py-20 md:py-24 lg:py-32 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -92,10 +91,7 @@ const AboutCompany = () => {
                   <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Tầm Nhìn</h2>
                 </div>
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6">
-                  Trở thành nền tảng giao dịch forex hàng đầu tại Việt Nam, mang đến cho khách hàng 
-                  những công cụ đầu tư thông minh và hiện đại nhất. Chúng tôi hướng tới việc xây dựng 
-                  một cộng đồng trader chuyên nghiệp, nơi mọi người đều có cơ hội tiếp cận và thành công 
-                  trong thị trường tài chính toàn cầu.
+                  Trở thành biểu tượng niềm tin hàng đầu Việt Nam về các giải pháp đầu tư – phát triển tài chính cho cá nhân và doanh nghiệp.
                 </p>
                 <div className="p-3 sm:p-4 bg-blue-50 rounded-lg sm:rounded-xl">
                   <p className="text-blue-800 font-medium italic text-sm sm:text-base">
@@ -115,10 +111,7 @@ const AboutCompany = () => {
                   <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Sứ Mệnh</h2>
                 </div>
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6">
-                  Cung cấp dịch vụ giao dịch forex minh bạch, an toàn và hiệu quả cao. Chúng tôi cam kết 
-                  mang đến cho khách hàng những công cụ phân tích chuyên sâu, tỷ giá cạnh tranh và dịch vụ 
-                  hỗ trợ 24/7. Sứ mệnh của chúng tôi là giúp mọi nhà đầu tư, từ người mới bắt đầu đến 
-                  chuyên gia, đều có thể đạt được mục tiêu tài chính của mình.
+                  Mang đến cho cộng đồng một hệ sinh thái đầu tư – tự do tài chính uy tín và thịnh vượng bằng sự tận tâm, uy tín và chuyên nghiệp.
                 </p>
                 <div className="p-3 sm:p-4 bg-green-50 rounded-lg sm:rounded-xl">
                   <p className="text-green-800 font-medium italic text-sm sm:text-base">
