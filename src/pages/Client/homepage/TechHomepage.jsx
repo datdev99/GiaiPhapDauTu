@@ -1,10 +1,10 @@
-import FastNew from '../../components/client/FastNew/FastNew';
-import EconomicCalendar from '../../components/client/EconomicCalendar/EconomicCalendar';
+import FastNew from '../../../components/client/FastNew/FastNew';
+import EconomicCalendar from '../../../components/client/EconomicCalendar/EconomicCalendar';
 // import img_prospero from '../../assets/prospero1.png';
-import Footer from '../../components/layout/footer/Footer';
-import News from '../../components/client/News/News';
-import Slider from '../../components/AutoPlay';
-import Marketknowledge from '../../components/client/Marketknowledge';
+// import Footer from '../../components/layout/footer/Footer';
+import News from '../../../components/client/News/News';
+import Slider from '../../../components/AutoPlay';
+import Marketknowledge from '../../../components/client/Marketknowledge';
 
 const TechHomepage = () => {
   // const [currentSlide, setCurrentSlide] = useState(0);

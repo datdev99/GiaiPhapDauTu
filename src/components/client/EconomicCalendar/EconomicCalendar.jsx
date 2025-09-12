@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Clock, Star } from 'lucide-react';
 import { useCalendar } from '../../../queries/calendar.query';
 import { isPubTimeBeforeNow } from '../../../utils/helper';
@@ -114,6 +114,46 @@ const EconomicCalendar = () => {
         ) : (
           // Actual content
           calendarData.list.map((event, index) => (
+            event?.content?.length > 0 ?
+            <>
+                {
+                  event.content.map((contentItem, contentIndex) => (
+                    contentItem.translate && !isPubTimeBeforeNow(contentItem.pub_time) && <>
+                      <div key={contentIndex} className="bg-gray-700 rounded-lg p-4 transition-all duration-300 hover:bg-gray-600">
+                        <div className='flex gap-3'>
+                          {/* Time Badge */}
+                          <div className="bg-red-600 text-white text-xs font-medium px-2 py-1 rounded mb-3 inline-block">
+                            {contentItem.pub_time}
+                          </div>
+                          
+                          {/* Stars Rating */}
+                          <div className="flex items-center space-x-1 mb-3">
+                            {renderStars(contentItem.star)}
+                          </div>
+                          {/* Currency */}
+                          <div className='ml-auto text-sm font-medium text-gray-200'>
+                            {contentItem.currency}
+                          </div>
+                        </div>
+
+                        {/* contentItem Info */}
+                        <div className="flex items-start space-x-3">
+                          {/* <span className="text-xl flex-shrink-0 mt-0.5">
+                            {contentItem.country}
+                          </span> */}
+                          <img src={contentItem.country_flag} width={30} alt="" />
+                          <div className="flex-1">
+                            <p className="text-white text-sm leading-relaxed">
+                              {contentItem.translate}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  ))
+                }
+            </>
+            :
             event.events_translate && !isPubTimeBeforeNow(event.pub_time) && <>
               <div key={index} className="bg-gray-700 rounded-lg p-4 transition-all duration-300 hover:bg-gray-600">
                 <div className='flex gap-3'>

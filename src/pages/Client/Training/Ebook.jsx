@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { X, Mail, User, Phone, Download } from 'lucide-react';
-import FinanciEbook from '../../assets/Fibonacci-Trading.jpg';
-import BullishEngulfingEbook from '../../assets/bullish-engulfing.png';
+import FinanciEbook from '../../../assets/Fibonacci-Trading.jpg';
+import BullishEngulfingEbook from '../../../assets/bullish-engulfing.png';
 
 const Ebook = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);

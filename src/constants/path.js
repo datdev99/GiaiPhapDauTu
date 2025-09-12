@@ -19,9 +19,21 @@ const path = {
         }
     },
     admin: {
-        // homepage: '/admin',
-        // login: '/admin/login',
+        articles: {
+            all: '/admin/articles',
+            add: '/admin/articles/add',
+            edit: (articleId) => `/admin/articles/edit/${articleId}`
+        },
+        control_panel: '/admin/control-panel',
+        career: {
+            all: '/admin/careers',
+            add: '/admin/careers/add'
+        }
     },
+    auth: {
+        login: '/admin/login',
+        register: '/admin/register',
+    }
 }
 
 export default path;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MapPin, Clock, Users, Briefcase, AlertCircle, ChevronRight, Filter, Search } from 'lucide-react';
-import { useJobs } from '../../queries/careers.query';
+import { useJobs } from '../../../queries/careers.query';
+import ApplyJobModal from '../../../components/client/News/ApplyJobModal';
 
 // Component Loading Skeleton
 const SearchFilterSkeleton = () => (
@@ -80,6 +81,8 @@ const Careers = () => {
   const {data: jobs = { data: [] }, isLoading, isError, refetch} = useJobs();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDepartment, setSelectedDepartment] = useState('all');
+  const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
+  const [jobId, setJobId] = useState(null);
 
   const departments = ['all', 'Engineering', 'Marketing', 'Sales', 'HR'];
   
@@ -129,6 +132,11 @@ const Careers = () => {
         </div>
       </>
     );
+  }
+
+  const handleAplyJob = (jobId) => {
+    setIsApplyModalOpen(true)
+    setJobId(jobId);
   }
 
   return (
@@ -206,7 +214,7 @@ const Careers = () => {
                     </div>
                   </div>
                   
-                  <button className="mt-4 lg:mt-0 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl">
+                  <button onClick={() => handleAplyJob(job.id)} className="mt-4 lg:mt-0 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl">
                     Ứng tuyển ngay
                     <ChevronRight className="h-5 w-5" />
                   </button>
@@ -298,6 +306,10 @@ const Careers = () => {
           </div>
         </div>
       </div>
+
+      {
+        isApplyModalOpen && <ApplyJobModal jobId={jobId} isOpen={isApplyModalOpen} setIsOpen={setIsApplyModalOpen} />
+      }
 
       <style jsx>{`
         @keyframes pulse {

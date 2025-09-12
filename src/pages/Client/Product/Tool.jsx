@@ -1,9 +1,11 @@
-import ArticleItem from "../../components/client/ArticleItem";
-import { useArticles } from "../../queries/article.query";
+import React from 'react'
+import { useArticles } from "../../../queries/article.query";
+import ArticleItem from '../../../components/client/ArticleItem';
+import { Category } from '../../../utils/enum';
 
-const Knowledge = () => {
-    const {data: articles} = useArticles(2006);
-  
+const Tool = () => {
+  const {data: articles} = useArticles(Category.ToolSupport);
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -17,4 +19,4 @@ const Knowledge = () => {
   )
 }
 
-export default Knowledge
+export default Tool

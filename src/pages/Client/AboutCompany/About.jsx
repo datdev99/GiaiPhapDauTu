@@ -1,6 +1,5 @@
-import React from 'react';
 import { Eye, Target, Heart, Users, TrendingUp, Shield, Award, Globe } from 'lucide-react';
-import Header from '../../components/layout/header/Header';
+// import Header from '../../../components/layout/header/Header';
 
 const AboutCompany = () => {
   const coreValues = [

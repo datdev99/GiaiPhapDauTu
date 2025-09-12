@@ -1,10 +1,11 @@
-import React from 'react'
-import { useArticles } from '../../queries/article.query';
-import ArticleItem from '../../components/client/ArticleItem';
 
-const Tool = () => {
-  const {data: articles} = useArticles(2004);
+import ArticleItem from "../../../components/client/ArticleItem";
+import { useArticles } from "../../../queries/article.query";
+import { Category } from "../../../utils/enum";
 
+const Copytrade = () => {
+  const {data: articles} = useArticles(Category.CopyTrade);
+  
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -18,4 +19,4 @@ const Tool = () => {
   )
 }
 
-export default Tool
+export default Copytrade

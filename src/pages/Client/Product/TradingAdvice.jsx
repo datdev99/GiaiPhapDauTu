@@ -1,9 +1,9 @@
-import ArticleItem from "../../components/client/ArticleItem";
-import { useArticles } from "../../queries/article.query";
+import ArticleItem from "../../../components/client/ArticleItem";
+import { useArticles } from "../../../queries/article.query";
+import { Category } from "../../../utils/enum";
 
-const Copytrade = () => {
-  const {data: articles} = useArticles(2003);
-  console.log(articles, 'articles');
+const TradingAdvice = () => {
+  const {data: articles} = useArticles(Category.TradingAdvice);
   
   return (
     <div className="container mx-auto px-4 py-8">
@@ -18,4 +18,4 @@ const Copytrade = () => {
   )
 }
 
-export default Copytrade
+export default TradingAdvice

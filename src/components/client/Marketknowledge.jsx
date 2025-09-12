@@ -1,7 +1,8 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
-import { useGiaoDich } from '../../queries/news.query';
 import { getFullImageUrl } from '../../utils/helper';
+import { useArticles } from '../../queries/article.query';
+import { Category } from '../../utils/enum';
 
 const MarketknowledgeLoadingSkeleton = () => {
     return (
@@ -62,7 +63,7 @@ const MarketknowledgeLoadingSkeleton = () => {
 };
 
 const Marketknowledge = () => {
-    const { data: articles, isLoading, isError } = useGiaoDich();
+    const { data: articles, isLoading, isError } = useArticles(Category.Knowledge);
     const [currentSlide, setCurrentSlide] = useState(0);
 
     useEffect(() => {

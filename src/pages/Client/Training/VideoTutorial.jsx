@@ -1,5 +1,5 @@
-import VideoTutorialCard from '../../components/client/VideoTutorialCard'
-import { useVideos } from '../../queries/video.query';
+import VideoTutorialCard from '../../../components/client/VideoTutorialCard'
+import { useVideos } from '../../../queries/video.query';
 
 const VideoTutorial = () => {
     const {data: videoData, isLoading, isError, error} = useVideos();

@@ -1,6 +1,7 @@
 import { Calendar, User, ArrowRight } from 'lucide-react';
-import { useNews } from '../../../queries/news.query';
 import { getFullImageUrl } from '../../../utils/helper';
+import { useArticles } from '../../../queries/article.query';
+import { Category } from '../../../utils/enum';
 
 const NewsLoadingSkeleton = () => {
   return (
@@ -69,7 +70,7 @@ const NewsLoadingSkeleton = () => {
 };
 
 const News = () => {
-  const { data: newsData, isLoading, isError } = useNews();
+  const { data: newsData, isLoading, isError } = useArticles(Category.News);
 
   // Show loading skeleton while data is loading
   if (isLoading) {
