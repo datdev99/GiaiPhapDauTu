@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { getFullImageUrl } from '../../utils/helper';
 import { useArticles } from '../../queries/article.query';
 import { Category } from '../../utils/enum';
+import { Link } from 'react-router-dom';
+import path from '../../constants/path';
 
 const MarketknowledgeLoadingSkeleton = () => {
     return (
@@ -63,7 +65,7 @@ const MarketknowledgeLoadingSkeleton = () => {
 };
 
 const Marketknowledge = () => {
-    const { data: articles, isLoading, isError } = useArticles(Category.Knowledge);
+    const { data: articles, isLoading, isError } = useArticles(Category.Market);
     const [currentSlide, setCurrentSlide] = useState(0);
 
     useEffect(() => {
@@ -146,7 +148,9 @@ const Marketknowledge = () => {
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
                                             <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md rounded-xl p-4 sm:p-6 shadow-lg">
-                                                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">{slide.title}</h3>
+                                                <Link to={path.client.newsDetail(slide.id)}>
+                                                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">{slide.title}</h3>
+                                                </Link>
                                                 <p className="text-gray-200 text-sm sm:text-base lg:text-lg">{slide.description}</p>
                                             </div>
                                         </div>

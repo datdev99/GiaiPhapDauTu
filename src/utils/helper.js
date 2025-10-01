@@ -41,3 +41,4 @@ export const DateFormat = (dateStr) => {
 
   return formattedDate;
 }
+

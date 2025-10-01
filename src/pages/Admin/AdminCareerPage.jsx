@@ -2,40 +2,43 @@ import { Building, Edit, Eye, MapPin, Plus, Trash2 } from 'lucide-react';
 import React from 'react'
 import { Link } from 'react-router-dom';
 import path from '../../constants/path';
+import { useJobs } from '../../queries/careers.query';
 
 const AdminCareerPage = () => {
-  const recentJobs = [
-      {
-        id: 1,
-        title: 'Senior Frontend Developer',
-        company: 'TechCorp Vietnam',
-        location: 'TP.HCM',
-        salary: '25-35 triệu',
-        applications: 24,
-        status: 'active',
-        posted: '2025-09-09'
-      },
-      {
-        id: 2,
-        title: 'Marketing Manager',
-        company: 'StartUp XYZ',
-        location: 'Hà Nội',
-        salary: '20-30 triệu',
-        applications: 18,
-        status: 'active',
-        posted: '2025-09-08'
-      },
-      {
-        id: 3,
-        title: 'UI/UX Designer',
-        company: 'Design Studio',
-        location: 'Remote',
-        salary: '15-25 triệu',
-        applications: 32,
-        status: 'closed',
-        posted: '2025-09-07'
-      }
-    ];
+  const {data: jobs, isLoading, isError } = useJobs();
+
+  // const recentJobs = [
+  //     {
+  //       id: 1,
+  //       title: 'Senior Frontend Developer',
+  //       company: 'TechCorp Vietnam',
+  //       location: 'TP.HCM',
+  //       salary: '25-35 triệu',
+  //       applications: 24,
+  //       status: 'active',
+  //       posted: '2025-09-09'
+  //     },
+  //     {
+  //       id: 2,
+  //       title: 'Marketing Manager',
+  //       company: 'StartUp XYZ',
+  //       location: 'Hà Nội',
+  //       salary: '20-30 triệu',
+  //       applications: 18,
+  //       status: 'active',
+  //       posted: '2025-09-08'
+  //     },
+  //     {
+  //       id: 3,
+  //       title: 'UI/UX Designer',
+  //       company: 'Design Studio',
+  //       location: 'Remote',
+  //       salary: '15-25 triệu',
+  //       applications: 32,
+  //       status: 'closed',
+  //       posted: '2025-09-07'
+  //     }
+  //   ];
 
 
   return (
@@ -66,7 +69,7 @@ const AdminCareerPage = () => {
           <thead className="bg-gray-50">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Vị trí</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Công ty</th>
+              {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Công ty</th> */}
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Địa điểm</th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Mức lương</th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Ứng tuyển</th>
@@ -75,19 +78,19 @@ const AdminCareerPage = () => {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            {recentJobs.map((job) => (
+            {jobs?.data?.map((job) => (
               <tr key={job.id} className="hover:bg-gray-50">
                 <td className="px-6 py-4">
                   <div className="text-sm font-medium text-gray-900 hover:text-blue-600 cursor-pointer">
                     {job.title}
                   </div>
                 </td>
-                <td className="px-6 py-4">
+                {/* <td className="px-6 py-4">
                   <div className="flex items-center text-sm text-gray-600">
                     <Building className="h-4 w-4 mr-1" />
                     {job.company}
                   </div>
-                </td>
+                </td> */}
                 <td className="px-6 py-4">
                   <div className="flex items-center text-sm text-gray-600">
                     <MapPin className="h-4 w-4 mr-1" />
@@ -107,12 +110,16 @@ const AdminCareerPage = () => {
                 </td>
                 <td className="px-6 py-4">
                   <div className="flex items-center space-x-2">
-                    <button className="text-blue-600 hover:text-blue-800">
-                      <Eye className="h-4 w-4" />
-                    </button>
-                    <button className="text-green-600 hover:text-green-800">
-                      <Edit className="h-4 w-4" />
-                    </button>
+                    <Link to={path.client.careers} target='_blank' rel='noreferrer'>
+                      <button className="text-blue-600 hover:text-blue-800 cursor-pointer">
+                        <Eye className="h-4 w-4" />
+                      </button>
+                    </Link>
+                    <Link to={path.admin.career.edit(job.id)}>
+                      <button className="text-green-600 hover:text-green-800 cursor-pointer">
+                        <Edit className="h-4 w-4" />
+                      </button>
+                    </Link>
                     <button className="text-red-600 hover:text-red-800">
                       <Trash2 className="h-4 w-4" />
                     </button>

@@ -1,10 +1,10 @@
 import { CalendarOutlined } from "@ant-design/icons"
 import { DateFormat, getFullImageUrl } from "../../utils/helper";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import path from "../../constants/path";
 
 const ArticleItem = ({ data }) => {
-  console.log(data, 'data');
-
   return (
     <>
       <div key={data.id} className="bg-white rounded-lg sm:rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group transform hover:-translate-y-2">
@@ -17,9 +17,11 @@ const ArticleItem = ({ data }) => {
         </div>
         
         <div className="p-4 sm:p-6">
-          <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors leading-tight">
-            {data.title}
-          </h3>
+          <Link to={path.client.newsDetail(data.id)}>
+            <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors leading-tight">
+              {data.title}
+            </h3>
+          </Link>
           {/* <p className="text-gray-600 mb-3 sm:mb-4 line-clamp-3 text-sm sm:text-base leading-relaxed">{data.createdAt}</p> */}
           
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4 space-y-2 sm:space-y-0">

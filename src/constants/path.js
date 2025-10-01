@@ -6,6 +6,7 @@ const path = {
         careers: '/careers',
         contact: '/contact',
         news: '/news',
+        newsDetail: (newsId) => `/news/${newsId}`,
         training: {
             video: '/video-tutorial',
             knowledge: '/knowledge',
@@ -27,7 +28,8 @@ const path = {
         control_panel: '/admin/control-panel',
         career: {
             all: '/admin/careers',
-            add: '/admin/careers/add'
+            add: '/admin/careers/add',
+            edit: (careerId) => `/admin/careers/edit/${careerId}`
         }
     },
     auth: {

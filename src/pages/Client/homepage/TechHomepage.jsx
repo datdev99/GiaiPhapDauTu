@@ -52,18 +52,6 @@ const TechHomepage = () => {
               AZ GROUP
             </span>
           </h1>
-          {/* <ul className="text-left max-w-4xl mx-auto mb-8 space-y-4 text-gray-300 text-lg sm:text-xl md:text-2xl leading-relaxed">
-            <li className="flex items-start gap-3">
-              <span className="text-yellow-400 mt-1">✔</span>
-              Bạn là một nhà giao dịch mới bước vào thị trường hoặc chưa có kinh nghiệm, 
-              hãy để chuyên gia hỗ trợ và cung cấp dịch vụ.
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-yellow-400 mt-1">✔</span>
-              Bạn là một nhà giao dịch đã có kinh nghiệm muốn tối đa hóa lợi nhuận, 
-              chúng tôi chia sẻ thêm nhiều giải pháp, công cụ và danh mục hiệu quả.
-            </li>
-          </ul> */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-8">
             <div className="bg-[#1f1f4a]/60 p-6 rounded-2xl shadow-lg">
               <p className="text-lg sm:text-xl text-gray-200 leading-relaxed">

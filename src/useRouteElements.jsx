@@ -36,6 +36,8 @@ import EditArticles from "./pages/Admin/Articles/EditArticles"
 import Login from "./pages/Admin/Auth/LoginPage"
 import LoginPage from "./pages/Admin/Auth/LoginPage"
 import RegisterPage from "./pages/Admin/Auth/Register"
+import NewDetailPage from "./pages/Client/News/NewDetailPage"
+import EditCareer from "./pages/Admin/Careers/EditCareer"
 
 export default function useRouteElements() {
     
@@ -117,6 +119,12 @@ export default function useRouteElements() {
       element: <ChildrenLayout banner={bannerNews}>
         <News />
       </ChildrenLayout>
+    },
+    {
+      path: path.client.newsDetail(":newsId"),
+      element: <ChildrenLayout banner={bannerNews}>
+        <NewDetailPage />
+      </ChildrenLayout>
     }
   ]
 
@@ -169,6 +177,14 @@ export default function useRouteElements() {
         </AdminLayout>
       )
     },
+    {
+      path: path.admin.career.edit(':careerId'),
+      element: (
+        <AdminLayout>
+          <EditCareer />
+        </AdminLayout>
+      )
+    }
   ]
 
   const authRoutes = [

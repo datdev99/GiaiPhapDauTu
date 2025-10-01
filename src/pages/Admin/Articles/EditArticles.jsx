@@ -231,7 +231,7 @@ const EditArticles = () => {
                 <div className="flex items-center justify-between max-w-full">
                     <div className="flex items-center space-x-4">
                         <h1 className="text-xl font-semibold text-gray-800">
-                            {formData.title || 'Thêm bài viết mới'}
+                            {formData.title || 'Chỉnh sửa bài viết'}
                         </h1>
                         <span className="text-sm text-gray-500">
                             {isPreviewMode ? 'Xem trước' : 'Chỉnh sửa'}

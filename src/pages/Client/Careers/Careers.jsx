@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MapPin, Clock, Users, Briefcase, AlertCircle, ChevronRight, Filter, Search } from 'lucide-react';
 import { useJobs } from '../../../queries/careers.query';
-import ApplyJobModal from '../../../components/client/News/ApplyJobModal';
+import ApplyJobModal from '../../../components/client/Modal/ApplyJobModal';
 
 // Component Loading Skeleton
 const SearchFilterSkeleton = () => (
